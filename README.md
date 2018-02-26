@@ -1,2 +1,5 @@
-# CarExtended (MVC) uses classes, inheritance, services, databases and frameworks like Entity, Ninject.
+# CarExtended (MVC) uses:
+- Entity Framework
+- Ninject.MVC5 -Version 3.2.1
+- Services 
 
