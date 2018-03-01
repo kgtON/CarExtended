@@ -26,6 +26,7 @@ namespace CarModelExt.Repository
 
         public virtual void Edit(T entity)
         {
+            
             using (var context = new ApplicationDbContext())
             {
                 entity.DateMod = DateTime.Now;
@@ -38,7 +39,8 @@ namespace CarModelExt.Repository
         {
             using (var context = new ApplicationDbContext())
             {
-                context.Entry(entity).State = EntityState.Deleted;
+                entity.IsActive = false;
+                context.Entry(entity).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

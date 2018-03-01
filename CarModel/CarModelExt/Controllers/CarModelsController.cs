@@ -9,16 +9,21 @@ using System.Web.Mvc;
 using CarModelExt.Models;
 using CarModelExt.Repository;
 using CarModelExt.Repository.Interfaces;
+using CarModelExt.BL;
+using System.Net.Mail;
 
 namespace CarModelExt.Controllers
 {
     public class CarModelsController : Controller
     {
         private readonly ICarModelRepository _carModelRepository;
+        private readonly IBussinessLogic _bussinessLogic;
 
         public CarModelsController()
         {
             _carModelRepository = new CarModelRepository();
+            _bussinessLogic = new BussinessLogic();
+
         }
         // GET: CarModels
         public ActionResult Index()
@@ -29,9 +34,8 @@ namespace CarModelExt.Controllers
             }
             else
             {
-                return View(_carModelRepository.GetWhere(x => x.Id >= 0));
+                return View(_carModelRepository.GetWhere(x => x.Id >= 0 && x.IsActive));
             }
-            
         }
 
         // GET: CarModels/Details/5
@@ -59,11 +63,16 @@ namespace CarModelExt.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CarModel CarModel)
         {
-            //var validator = new AddressValidator();
-            //var result = validator.Validate(CarModel);
 
             if (ModelState.IsValid)
             {
+                if(!_bussinessLogic.IsLogged())
+                {
+                    CarModel.DateCreate = DateTime.Now;
+
+                }
+                CarModel.ModPerson = _bussinessLogic.GetUserName();
+                CarModel.RecordAuthor = _bussinessLogic.GetUserName();
                 _carModelRepository.Create(CarModel);
                 return RedirectToAction("Index");
             }
@@ -82,7 +91,9 @@ namespace CarModelExt.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             CarModel CarModel = _carModelRepository.GetWhere(x => x.Id == id).FirstOrDefault();
+           
             if (CarModel == null)
             {
                 return HttpNotFound();
@@ -99,6 +110,7 @@ namespace CarModelExt.Controllers
         {
             if (ModelState.IsValid)
             {
+                CarModel.ModPerson = _bussinessLogic.GetUserName();
                 _carModelRepository.Edit(CarModel);
                 return RedirectToAction("Index");
             }

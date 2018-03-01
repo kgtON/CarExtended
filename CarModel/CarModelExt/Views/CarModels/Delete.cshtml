@@ -36,11 +36,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CreateDate)
+            @Html.DisplayNameFor(model => model.DateCreate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreateDate)
+            @Html.DisplayFor(model => model.DateCreate)
         </dd>
 
         <dt>
@@ -77,7 +77,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
