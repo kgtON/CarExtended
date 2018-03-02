@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarModelExt", "CarModelExt\CarModelExt.csproj", "{3E1453A8-0BF0-465C-BBC9-E19A62546E11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostCode", "..\PostCode\PostCode\PostCode.csproj", "{EEE69926-52D4-4C9E-9156-F65283C7B353}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarModelExtWebApi", "CarModelExtWebApi\CarModelExtWebApi.csproj", "{7CDE07EA-A926-481D-9E33-56F8D5CAFE49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3E1453A8-0BF0-465C-BBC9-E19A62546E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E1453A8-0BF0-465C-BBC9-E19A62546E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E1453A8-0BF0-465C-BBC9-E19A62546E11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEE69926-52D4-4C9E-9156-F65283C7B353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEE69926-52D4-4C9E-9156-F65283C7B353}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEE69926-52D4-4C9E-9156-F65283C7B353}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEE69926-52D4-4C9E-9156-F65283C7B353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDE07EA-A926-481D-9E33-56F8D5CAFE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDE07EA-A926-481D-9E33-56F8D5CAFE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDE07EA-A926-481D-9E33-56F8D5CAFE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDE07EA-A926-481D-9E33-56F8D5CAFE49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
